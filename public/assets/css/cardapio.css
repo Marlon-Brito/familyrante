@@ -36,6 +36,10 @@
     }
 }
 
+input[type='radio']:checked + label{
+    color: black;
+}
+
 .menu__cardapio{
     display: flex;
     flex-wrap: wrap;
@@ -86,17 +90,21 @@
     .navegacao{
         background-color: transparent;
         margin: auto;
-    
+
         & > label{
             background-color: #EE2E31;
             border-radius: 10px;
         
-
             &:hover{
-                color: black;
-                background-color: #d32528;
+                color: white;
+                background-color: #94191b;
             }
         }
+    }
+
+    input[type='radio']:checked + label{
+        background-color: #94191b;
+        color: white;
     }
 
     .menu__cardapio li{
@@ -125,13 +133,7 @@
         & > label{
             padding: 1.0em;
             font-size: 1.1em;
-            cursor: pointer;
             text-align: center;
-            color: white;
-    
-            &:hover{
-                color: black;
-            }
         }
     }
 

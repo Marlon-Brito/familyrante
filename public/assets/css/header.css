@@ -1,6 +1,7 @@
 .logo{
-    width: 250px;
+    width: 175px;
     margin: auto;
+    padding: 5px 0px;
 }
 
 .cabecalho{
@@ -29,4 +30,19 @@
 .menu ul li:hover{
     background-color: #1D7874;
     cursor: pointer;
+}
+
+@media (min-width: 1200px){
+    .logo{
+        width: 250px;
+        padding: 0px;
+    }
+
+    .cabecalho{
+        font-size: 1.2em;
+    }
+
+    .menu ul li{
+        padding: 20px 30px;
+    }
 }

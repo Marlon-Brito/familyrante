@@ -5,12 +5,11 @@ import Fundo from '../public/assets/images/home_background.jpg';
 import '../public/assets/css/index.css';
 import '../public/assets/css/cardapio.css';
 import '../public/assets/js/cardapio.js';
-//import '../public/assets/js/animacoes.js';
 // Importando componentes
 import Header from './components/Header.jsx';
 import ItemCardapio from './components/ItemCardapio.jsx';
 import Navegacao from './components/Navegação.jsx';
-// Importando estruturas de dados
+// Importando estrutura de dados
 import { bebidas, pratosPrincipais, sobremesas } from '../public/assets/js/cardapio.js';
 
 function App() {
@@ -26,14 +25,14 @@ function App() {
       entries.forEach((entry) => {
         // Aí verá cada entrada, se ela estiver na tela se aplicará a classe show senão continuará hidden
         if (entry.isIntersecting){
-            entry.target.classList.add('show');
+          entry.target.classList.add('show');
         }else{
-            entry.target.classList.remove('show');
+          entry.target.classList.remove('show');
         }
       })
     });
 
-    // Selecionar vários elementos para observar
+    // Selecionando todos elementos escondidos para observar e mostrar
     const elements = document.querySelectorAll('.hidden');
 
     // Pra funcionar ele vai observar todos elementos e acessará suas informações vendo quando são visíveis ou não, assim percorrerá e observará cada elemento
@@ -42,8 +41,10 @@ function App() {
 
   return (
     <>
+      {/* Cabeçalho */}
       <Header/>
 
+      {/* Conteúdo Principal */}
       <main className='conteudo--principal'>
         <div className="container__fundo">
           <img src={Fundo} alt="Fundo de Entrada" className='img__fundo'/>
@@ -51,6 +52,7 @@ function App() {
         </div>
 
         <section className='hidden'>
+          {/* Cardápio: menu de navegação e itens do cardápio */}
           <h2 className='subtitulo container'>Cardápio</h2>
 
           <Navegacao atualizarPaginaSelecionada={atualizarPaginaSelecionada}/>
@@ -67,6 +69,7 @@ function App() {
           </ul>
         </section>
 
+        {/* Seções de Informações: Sobre, Serviços e Contato */}
         <section className='sobre hidden' id='sobre'>
           <h2 className='container'>Sobre</h2>
           <p>Família, restaurante e comida. Venha conhecer o Familyrante, o restaurante que busca trazer aquele gostinho caseiro e aconchegante de poder apreciar uma comida junto da família, à comida bem feita e de qualidade para saciar a fome.</p>
@@ -108,6 +111,7 @@ function App() {
         </section>
       </main>
 
+      {/* Rodapé */}
       <footer className='rodape'>
         <p>© Copyright Familyrante. Todos os direitos reservados.</p>
       </footer>

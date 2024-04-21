@@ -12,7 +12,7 @@ body{
 }
 
 .conteudo--principal{
-    padding-top: 126px;
+    padding-top: 111px;
 }
 
 .container__fundo{
@@ -211,6 +211,10 @@ body{
 }
 
 @media (min-width: 1200px){
+    .conteudo--principal{
+        padding-top: 126px;
+    }
+    
     .sobre, .funcionamento, .contato{
         & h2{
             font-size: 1.5em;
