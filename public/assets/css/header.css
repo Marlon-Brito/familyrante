@@ -1,0 +1,32 @@
+.logo{
+    width: 250px;
+    margin: auto;
+}
+
+.cabecalho{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.menu{
+    background-color: #1D7874;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.menu ul{
+    background-color: #071E22;
+}
+
+.menu ul li{
+    display: inline-block;
+    padding: 20px 10px;
+    color: white;
+}
+
+.menu ul li:hover{
+    background-color: #1D7874;
+    cursor: pointer;
+}
