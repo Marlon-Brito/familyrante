@@ -1,0 +1,266 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Sedan';
+}
+
+body{
+    background-color: #F4C095;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.conteudo--principal{
+    padding-top: 111px;
+}
+
+.container__fundo{
+    margin-bottom: 75px;
+}
+
+.img__fundo{
+    width: 100%;
+    max-height: 50vh;
+    display: flex;
+}
+
+.titulo{
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #1D7874;
+    padding: 10px;
+}
+
+.titulo--destaque{
+    color: white;
+}
+
+/* Seção Sobre */
+.sobre{
+    background-color: #1D7874;
+    padding: 10px;
+    text-align: center;
+    margin-top: 75px;
+    padding-bottom: 100px;
+
+    & > h2{
+        color: white;
+        background-color: #071E22;
+        padding: 10px;
+        font-size: 1.2em;
+        width: 90%;
+    }
+
+    & > p{
+        padding: 30px;
+        font-size: 1.0em;
+    }
+
+    & img{
+        width: 95%;
+    }
+}
+
+/* Seção Funcionamento */
+.funcionamento{
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding-bottom: 100px;
+
+    & > h2{
+        border: 2px dashed white;
+        padding: 10px;
+        font-size: 1.2em;
+        width: 90%;
+    }
+
+    & > h3{
+        margin-top: 30px;
+        font-size: 1.1em;
+        color: #1D7874;
+    }
+
+    & > ul{
+        padding: 10px;
+        font-size: 1.0em;
+        list-style: none;
+
+        & > li{
+            padding: 5px;
+            & small{
+                color: #EE2E31;
+            }
+        }
+    }
+}
+
+/* Seção Contato */
+.contato{
+    background-color: #071E22;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    padding-bottom: 50px;
+
+    & > h2{
+        font-size: 1.2em;
+        padding: 10px;
+        border-bottom: 1px solid white;
+        width: 90%;
+    }
+
+    & ul{
+        font-size: 1.1em;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 30px;
+    }
+
+    & li{
+        padding: 10px;
+    }
+
+    & a{
+        text-decoration: none;
+        color: white;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    & .icones{
+        color: white;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+    }
+}
+
+#insta{
+    background-image: linear-gradient(to top, #F59705, #F7552F, #DD0EA8, #213AD8);
+}
+
+#face{
+    background-color: #106BFF;
+}
+
+#whats{
+    background-color: #35C06C;
+}
+
+.rodape{
+    background-color: #1D7874;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Animações */
+.hidden{
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0%);
+    transition: all 1s;
+}
+
+@media (min-width: 768px){
+    .container__fundo{
+        background-color: #1D7874;
+        position: relative;
+    }
+
+    .titulo{
+        position: absolute;
+        top: 60%;
+        width: 100%;
+        background-color: transparent;
+        font-size: 2.0em;
+    }
+
+    .img__fundo{
+        max-width: 900px;
+        max-height: 50vh;
+        display: flex;
+        padding: 30px;
+        margin: auto;
+    }
+
+    .sobre{
+        & > p{
+            max-width: 60%;
+            margin: auto;
+        }
+
+        & > img{
+            max-width: 500px;
+        }
+    }
+}
+
+@media (min-width: 1200px){
+    .conteudo--principal{
+        padding-top: 126px;
+    }
+    
+    .sobre, .funcionamento, .contato{
+        & h2{
+            font-size: 1.5em;
+        }
+    }
+
+    .sobre{
+        & > p{
+            font-size: 1.1em;
+        }
+    }
+
+    .funcionamento{
+        & > h3{
+            font-size: 1.2em;
+        }
+    
+        & > ul{
+            font-size: 1.1em;
+        }
+    }
+
+    .contato{
+        & ul{
+            padding: 10px;
+            font-size: 1.3em;
+            padding: 30px;
+        }
+    }
+    
+    .rodape{
+        font-size: 1.0em;
+    }
+}
+
+/* 
+    071E22
+    1D7874
+    679289
+    F4C095
+    EE2E31
+*/
+
+/* 
+    300px
+    768px
+    1200px
+    1600px
+*/
