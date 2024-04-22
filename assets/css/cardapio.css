@@ -86,6 +86,15 @@ input[type='radio']:checked + label{
     text-align: justify;
 }
 
+.item__cardapio--imagem{
+    cursor: pointer;
+    transition: filter 0.5s;
+}
+
+.item__cardapio--imagem:hover{
+    filter: contrast(175%);
+}
+
 @media (min-width: 768px){
     .navegacao{
         background-color: transparent;

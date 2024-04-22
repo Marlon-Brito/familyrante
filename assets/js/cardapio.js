@@ -82,7 +82,7 @@ const monsterManga = {
     nome: 'Monster Mango Loco 473ml LT',
     preco: 'R$ 11,99',
     imagem: monsterMangaImg,
-    descricao: 'O Monster Mango Loco possui 16% de suco de manga e a mistura especial de energético da marca. Sua fórmula conta com taurina, cafeína, inositol e vitaminas B3, B2, B6, B12, oferecendo energia extra para o dia.',
+    descricao: 'O Monster Mango Loco possui suco de manga e a mistura especial de energético da marca. Sua fórmula conta com taurina, cafeína, inositol e vitaminas B3, B2, B6, B12.',
 }
 
 // Exportando dados
