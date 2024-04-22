@@ -50,7 +50,7 @@ function App() {
           <img src={Fundo} alt="Fundo de Entrada" className='img__fundo'/>
           <h1 className='titulo'>Seja bem-vindo ao <span className="titulo--destaque">Familyrante</span>!</h1>
         </div>
-
+        
         <section className='hidden'>
           {/* Cardápio: menu de navegação e itens do cardápio */}
           <h2 className='subtitulo container'>Cardápio</h2>

@@ -75,12 +75,17 @@ body{
         padding: 10px;
         font-size: 1.2em;
         width: 90%;
+        margin-bottom: 30px;
     }
 
     & > h3{
         margin-top: 30px;
         font-size: 1.1em;
-        color: #1D7874;
+        background-color: white;
+        color: black;
+        max-width: 800px;
+        margin: 50px auto 10px;
+        padding: 5px;
     }
 
     & > ul{
@@ -249,18 +254,3 @@ body{
         font-size: 1.0em;
     }
 }
-
-/* 
-    071E22
-    1D7874
-    679289
-    F4C095
-    EE2E31
-*/
-
-/* 
-    300px
-    768px
-    1200px
-    1600px
-*/
