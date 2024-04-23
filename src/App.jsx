@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 // Importando imagens
 import Fundo from '../public/assets/images/home_background.jpg';
+import Sobre from '../public/assets/images/sobre.jpg';
 // Importando styles e scripts
 import '../public/assets/css/index.css';
 import '../public/assets/css/cardapio.css';
@@ -74,7 +75,7 @@ function App() {
           <h2 className='container'>Sobre</h2>
           <p>Família, restaurante e comida. Venha conhecer o Familyrante, o restaurante que busca trazer aquele gostinho caseiro e aconchegante de poder apreciar uma comida junto da família, à comida bem feita e de qualidade para saciar a fome.</p>
 
-          <img src="../public/assets/images/sobre.jpg" alt="Sobre"/>
+          <img src={Sobre} alt="Sobre"/>
         </section>
 
         <section className='funcionamento hidden' id='funcionamento'>
