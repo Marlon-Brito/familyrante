@@ -1,60 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Sedan';
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth; /* comportamento de rolagem = suave */
 }
 
 body{
-    background-color: #F4C095;
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-color: black;
 }
 
-.conteudo--principal{
-    padding-top: 111px;
-}
-
-.container__fundo{
-    margin-bottom: 75px;
-}
-
-.img__fundo{
+.conteudo--principal video{
     width: 100%;
-    max-height: 50vh;
-    display: flex;
+    position: fixed;
+    z-index: -1;
+    top: 75px;
 }
 
-.titulo{
-    font-size: 1.5em;
-    text-align: center;
-    background-color: #1D7874;
-    padding: 10px;
+.apresentacao{
+    position: relative;
+    top: 90px;
+    margin-left: 0.3rem;
+    user-select: none;
+}
+
+.apresentacao .titulo{
+    font-size: 2em;
+    color: #F4FFFD;
+    text-shadow: 3px 3px 2px black;
+    line-height: 0.9em;
+}
+
+.apresentacao .slogan{
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 1px black;
+    margin-top: 0.5em;
 }
 
 .titulo--destaque{
-    color: white;
+    color: #cfa116;
+}
+
+.subtitulo{
+    font-size: 1.2em;
+    text-align: center;
+    padding: 5px 10px;
+    width: 90%;
+    font-family: 'Leckerli One';
+    background-color: black;
+    color: #F4FFFD;
+    font-weight: 100;
+}
+
+/* Seção Cardápio */
+#cardapio{
+    margin-top: 105px;
+    background-color: #ffe5c4;
+    padding: 20px 0 100px;
 }
 
 /* Seção Sobre */
 .sobre{
-    background-color: #1D7874;
-    padding: 10px;
+    background-color: #cfa116;
     text-align: center;
-    margin-top: 75px;
-    padding-bottom: 100px;
-
-    & > h2{
-        color: white;
-        background-color: #071E22;
-        padding: 10px;
-        font-size: 1.2em;
-        width: 90%;
-    }
+    padding: 20px 10px 100px;
 
     & > p{
-        padding: 30px;
+        margin-bottom: 30px;
+        padding: 0 20px;
         font-size: 1.0em;
+        text-align: justify;
     }
 
     & img{
@@ -64,34 +86,22 @@ body{
 
 /* Seção Funcionamento */
 .funcionamento{
-    padding: 10px;
+    padding: 20px 10px 100px;
     text-align: center;
-    background-color: black;
-    color: white;
-    padding-bottom: 100px;
-
-    & > h2{
-        border: 2px dashed white;
-        padding: 10px;
-        font-size: 1.2em;
-        width: 90%;
-        margin-bottom: 30px;
-    }
+    background-color: #F4FFFD;
 
     & > h3{
-        margin-top: 30px;
         font-size: 1.1em;
-        background-color: white;
+        background-color: #EE2E31;
+        border-radius: 10px;
         color: black;
-        max-width: 800px;
-        margin: 50px auto 10px;
         padding: 5px;
+        margin: 10px auto;
     }
 
     & > ul{
         padding: 10px;
         font-size: 1.0em;
-        list-style: none;
 
         & > li{
             padding: 5px;
@@ -104,17 +114,15 @@ body{
 
 /* Seção Contato */
 .contato{
-    background-color: #071E22;
+    padding: 20px 10px 100px;
+    background-color: black;
     text-align: center;
     color: white;
     padding: 10px;
     padding-bottom: 50px;
 
     & > h2{
-        font-size: 1.2em;
-        padding: 10px;
         border-bottom: 1px solid white;
-        width: 90%;
     }
 
     & ul{
@@ -160,10 +168,12 @@ body{
 }
 
 .rodape{
-    background-color: #1D7874;
+    background-color: #ffe5c4;
     padding: 15px;
     text-align: center;
-    font-size: 0.9em;
+    & > p{
+        font-size: 0.9em;
+    }
 }
 
 /* Animações */
@@ -181,32 +191,45 @@ body{
     transition: all 1s;
 }
 
+@media (min-width: 500px){
+    .apresentacao{
+        top: 150px;
+        width: 80%;
+        padding-left: 1rem;
+    }
+    
+    .apresentacao .titulo{
+        font-size: 3em;
+        color: #F4FFFD;
+        text-shadow: 3px 3px 2px black;
+        line-height: 0.9em;
+    }
+    
+    .apresentacao .slogan{
+        color: white;
+        font-size: 1.2em;
+        text-shadow: 2px 2px 1px black;
+        margin-top: 0.5em;
+    }
+
+    #cardapio{
+        margin-top: 215px;
+    }
+
+    .funcionamento h3{
+        width: 60%;
+    }
+}
+
 @media (min-width: 768px){
-    .container__fundo{
-        background-color: #1D7874;
-        position: relative;
-    }
-
-    .titulo{
-        position: absolute;
-        top: 60%;
-        width: 100%;
-        background-color: transparent;
-        font-size: 2.0em;
-    }
-
-    .img__fundo{
-        max-width: 900px;
-        max-height: 50vh;
-        display: flex;
-        padding: 30px;
-        margin: auto;
+    .apresentacao .slogan{
+        margin-top: 0.8em;
     }
 
     .sobre{
         & > p{
             max-width: 60%;
-            margin: auto;
+            margin: 50px auto;
         }
 
         & > img{
@@ -216,14 +239,29 @@ body{
 }
 
 @media (min-width: 1200px){
-    .conteudo--principal{
-        padding-top: 126px;
+    .conteudo--principal video{
+        top: 0;
     }
-    
-    .sobre, .funcionamento, .contato{
-        & h2{
-            font-size: 1.5em;
-        }
+
+    .apresentacao{
+        top: 200px;
+    }
+
+    .apresentacao .titulo{
+        font-size: 7em;
+    }
+
+    .apresentacao .slogan{
+        margin-top: 2em;
+        font-size: 1.5em;
+    }
+
+    #cardapio{
+        margin-top: 400px;
+    }
+
+    .subtitulo{
+        font-size: 1.5em;
     }
 
     .sobre{
@@ -232,14 +270,29 @@ body{
         }
     }
 
+    .subtitulo{ grid-area: subtitulo; }
+    .subtitulo__horario{ grid-area: subtitulo__horario; }
+    .lista__horario{ grid-area: lista__horario; }
+    .subtitulo__pagamento{ grid-area: subtitulo__pagamento; }
+    .lista__pagamento{ grid-area: lista__pagamento; }
+
     .funcionamento{
+        display: grid;
+        grid-template-areas:
+            'subtitulo subtitulo'
+            'subtitulo__horario subtitulo__pagamento'
+            'lista__horario lista__pagamento'
+        ;
+
         & > h3{
             font-size: 1.2em;
+            width: 40%;
         }
     
         & > ul{
             font-size: 1.1em;
         }
+
     }
 
     .contato{
@@ -252,5 +305,26 @@ body{
     
     .rodape{
         font-size: 1.0em;
+    }
+}
+
+@media (min-width: 1600px){
+    .apresentacao{
+        top: 300px;
+        width: 60%;
+        height: 35rem;
+        padding-left: 3rem;
+    }
+    
+    .apresentacao .titulo{
+        font-size: 8em;
+        text-shadow: 5px 5px 2px black;
+        line-height: 1em;
+    }
+    
+    .apresentacao .slogan{
+        font-size: 2rem;
+        text-shadow: 2px 2px 2px black;
+        margin-top: 2em;
     }
 }

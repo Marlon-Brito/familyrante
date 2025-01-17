@@ -1,16 +1,11 @@
 .container{
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
 }
 
 /* Navegação */
 .subtitulo{
-    font-size: 1.2em;
-    text-align: center;
-    border: 2px dashed black;
-    padding: 5px 10px;
     margin: 30px auto;
-    width: 90%;
 }
 
 .navegacao{
@@ -46,7 +41,6 @@ input[type='radio']:checked + label{
     justify-content: space-evenly;
     padding: 10px;
     list-style: none;
-    max-width: 1200px;
     margin: 10px auto;
 }
 
@@ -54,7 +48,9 @@ input[type='radio']:checked + label{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: white;
+    background-color: #050505;
+    color: #F4FFFD;
+    border: 2px solid white;
     box-shadow: 0px 0px 10px 1px black;
     border-radius: 10px;
     width: 16rem;
@@ -66,12 +62,14 @@ input[type='radio']:checked + label{
     & > img{
         width: 100%;
         height: 200px;
+        border: 2px solid #cfa116;
     }
 }
 
 /* Item Cardápio */
 .item__cardapio--nome{
     font-size: 1.2em;
+    color: #cfa116;
 }
 
 .item__cardapio--preco{
@@ -92,7 +90,7 @@ input[type='radio']:checked + label{
 }
 
 .item__cardapio--imagem:hover{
-    filter: contrast(175%);
+    filter: contrast(150%);
 }
 
 @media (min-width: 768px){
@@ -120,8 +118,8 @@ input[type='radio']:checked + label{
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: 32rem;
-        height: 16rem;
+        width: 40rem;
+        height: 20rem;
     
         & > div{
             margin-right: 10px;
@@ -129,20 +127,6 @@ input[type='radio']:checked + label{
 
         & > img{
             max-width: 300px;
-        }
-    }
-}
-
-@media (min-width: 1200px){
-    .subtitulo{
-        font-size: 1.5em;
-    }
-
-    .navegacao{
-        & > label{
-            padding: 1.0em;
-            font-size: 1.1em;
-            text-align: center;
         }
     }
 
@@ -156,6 +140,34 @@ input[type='radio']:checked + label{
     
     .item__cardapio--descricao{
         font-size: 1.0em;
+        text-align: justify;
+    }
+}
+
+@media (min-width: 1200px){
+    .subtitulo{
+        font-size: 1.5em;
+        padding: 10px 20px;
+    }
+
+    .navegacao{
+        & > label{
+            padding: 1.0em;
+            font-size: 1.1em;
+            text-align: center;
+        }
+    }
+
+    .item__cardapio--nome{
+        font-size: 1.5em;
+    }
+    
+    .item__cardapio--preco{
+        font-size: 1.3em;
+    }
+    
+    .item__cardapio--descricao{
+        font-size: 1.1em;
         text-align: justify;
     }
 }
