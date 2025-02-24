@@ -1,0 +1,99 @@
+// Navegação
+.navegacao{
+    @include displayFlex(center, center);
+    text-align: center;
+
+    & > input[type='radio']{
+        display: none;
+    }
+
+    & > input[type='radio']:hover + label{
+        color: $bg-color-tertiary;
+        border-bottom: 2px solid $bg-color-tertiary;
+    }
+
+    & > input[type='radio']:checked + label{
+        color: $bg-color-tertiary;
+        border-bottom: 2px solid $bg-color-tertiary;
+    }
+
+    & > label{
+        width: 30%;
+        height: 6rem;
+        margin: 0.5rem;
+        @include displayFlex(center, center);
+        flex-direction: column;
+        color: $text-color-primary;
+        cursor: pointer;
+
+        & > i{
+            font-size: 2em;
+        }
+
+        & > span{
+            padding: 0 10px;
+        }
+
+        @include tablet(){
+            font-size: 1.2em;
+            margin: 1rem;
+        }
+
+        @include pc(){
+            font-size: 1.4em;
+            margin: 1.5rem;
+        }
+    }
+}
+
+// Menu de Itens
+.menu__cardapio{
+    @include displayFlex(center, center);
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    text-align: center;
+    color: $text-color-primary;
+    background-color: $bg-color-secondary;
+    margin: 2rem 0;
+
+    & > .item__cardapio{
+        @include displayFlex(space-evenly, center);
+        flex-direction: column;
+        height: 24rem;
+        width: 16rem;
+        background-color: white;
+        margin: 1rem;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        font-weight: bold;
+
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.5);
+
+        & > div .item__cardapio--nome{
+            font-size: 1.5em;
+        }
+
+        & > .item__cardapio--imagem{
+            width: 95%;
+            height: 15rem;
+            border-radius: inherit;
+        }
+
+        & > div .item__cardapio--descricao{
+            display: none;
+        }
+
+        & > div .item__cardapio--preco{
+            font-size: 1.3em;
+            color: $bg-color-tertiary;
+            text-shadow: 1px 1px 1px black;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .menu__cardapio .item__cardapio{
+        height: 26rem;
+        width: 18rem;
+    }
+}
