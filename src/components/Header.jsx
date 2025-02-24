@@ -1,19 +1,35 @@
-import Logo from '../../public/assets/images/logo-familyrante-g.png';
-import '../../public/assets/css/header.css';
+import { useEffect, useState } from "react";
+import Logo from '../../public/assets/images/logo-familyrante.png';
 
 export default function Header(){
-    return(
-        <header className='cabecalho'>
-            <nav className='menu'>
-                <a href="./index.html">
-                    <img src={Logo} alt='Logo Familyrante' className='logo'/>
-                </a>
+    const [scrolled, setScrolled] = useState(false);
 
-                <ul>
-                    <a href="#cardapio"><li>Cardápio</li></a>
-                    <a href="#sobre"><li>Sobre</li></a>
-                    <a href="#funcionamento"><li>Serviços</li></a>
-                    <a href="#contato"><li>Contato</li></a>
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    return(
+        <header className={`cabecalho ${scrolled ? "scrolled" : ""}`}>
+            <img src={Logo} alt="Logo Familyrante" className='logo'/>
+
+            <nav>
+                <ul className="menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#cardapio">Cardápio</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </header>

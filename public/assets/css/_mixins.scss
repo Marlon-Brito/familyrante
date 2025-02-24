@@ -1,0 +1,23 @@
+@mixin displayFlex($directionX, $directionY){
+    display: flex;
+    justify-content: $directionX;
+    align-items: $directionY;
+}
+
+@mixin tablet(){
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin pc(){
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tv(){
+    @media (min-width: 1600px) {
+        @content;
+    }
+}

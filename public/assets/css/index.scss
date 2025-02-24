@@ -1,0 +1,255 @@
+// Imports
+@import "./variaveis";
+@import "./mixins";
+@import "./header";
+@import "./cardapio";
+@import "./carrossel";
+@import "./footer";
+@import "./modal-carrinho";
+
+// Fontes
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan&family=Leckerli+One&family=Playwrite+AU+SA&display=swap');
+
+// Reset caseiro
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color: $bg-color-primary;
+    font-size: 1em;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.apresentacao{
+    text-align: center;
+    margin: 2rem auto;
+    font-size: 1.1em;
+
+    @include tablet(){
+        font-size: 1.3em;
+        margin: 3rem auto;
+    }
+
+    @include pc(){
+        font-size: 1.5em;
+        margin: 4rem auto;
+    }
+
+    & > .titulo{
+        color: $bg-color-tertiary;
+        text-shadow: 1px 1px 1px black;
+        font-size: 1.8em;
+    }
+}
+
+.subtitulo{
+    background-color: $bg-color-tertiary;
+    color: $text-color-primary;
+    font-family: 'Leckerli One';
+    padding: 0.5rem 0;
+    text-align: center;
+    width: 90%;
+    margin: 1rem auto;
+    font-size: 1.5em;
+
+    @include tablet(){
+        font-size: 1.7em;
+    }
+
+    @include pc(){
+        font-size: 1.9em;
+    }
+}
+
+.sobre, .servicos{
+    background-color: $bg-color-quaternary;
+    padding: 1rem;
+}
+
+.sobre{
+    @include tablet(){
+        padding: 0rem;
+
+        & > .sobre__conteudo .subtitulo{
+            grid-area: subtitulo;
+        }
+        & > .sobre__conteudo p{
+            grid-area: conteudo;
+        }
+        & > .sobre__conteudo img{
+            grid-area: imagem;
+        }
+    }
+}
+
+.servicos{
+    @include tablet(){
+        padding: 0rem;
+
+        & > .servicos__conteudo div .subtitulo{
+            grid-area: titulo;
+            margin-top: 2rem;
+        }
+        & > .servicos__conteudo div h3{
+            grid-area: subtitulos;
+        }
+        & > .servicos__conteudo div ul{
+            grid-area: conteudos;
+        }
+        & > .servicos__conteudo img{
+            grid-area: imagem;
+        }
+    }
+}
+
+.sobre__conteudo, .servicos__conteudo{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+    text-align: center;
+    color: $text-color-secondary;
+
+    & > img{
+        width: 100%;
+        margin: 0 auto 1rem;
+    }
+
+    @include tablet(){
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    
+        & > img{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+    }
+}
+
+.sobre__conteudo{
+    
+    & > p{
+        margin: 1rem;
+
+        @include tablet(){
+            font-size: 1.1em;
+        }
+
+        @include pc(){
+            width: 60%;
+            margin: auto;
+            font-size: 1.2em;
+        }
+    }
+
+    @include tablet(){
+        grid-template-areas: 
+            'subtitulo imagem'
+            'conteudo imagem'
+            'conteudo imagem'
+        ;
+    }
+}
+
+.servicos__conteudo{
+    & > img{
+        margin: 1rem 0;
+    } 
+
+    & > div h3{
+        color: $bg-color-tertiary;
+        margin-top: 1rem;
+    }
+
+    & > div ul{
+        @include tablet(){
+            font-size: 1.1em;
+        }
+
+        @include pc(){
+            font-size: 1.2em;
+        }
+    }
+
+    @include tablet(){
+        grid-template-areas: 
+            'imagem titulo'
+            'imagem subtitulos'
+            'imagem conteudos'
+        ;
+    }
+}
+
+.contato{
+    margin-top: 2rem;
+
+    & > ul{
+        text-align: center;
+
+        @include tablet(){
+            @include displayFlex(center, center);
+        }
+
+        & > li{
+            padding: 0.5rem;
+            
+            @include tablet(){
+                padding: 1rem;
+                font-size: 1.1em;
+            }
+
+            @include pc(){
+                padding: 1.5rem;
+                font-size: 1.2em;
+            }
+
+            & > a{
+                text-decoration: none;
+                color: $text-color-primary;
+            }
+        }
+    }
+}
+
+.icones{
+    font-size: 2em;
+    padding: 0.1em;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+#insta{
+    background-image: linear-gradient(to top, #F59705, #F7552F, #DD0EA8, #213AD8);
+}
+
+#face{
+    background-color: #106BFF;
+}
+
+#whats{
+    background-color: #35C06C;
+}
+
+.rodape{
+    font-size: 0.8em;
+
+    @include tablet(){
+        font-size: 0.9em;
+    }
+
+    @include pc(){
+        font-size: 1em;
+    }
+}

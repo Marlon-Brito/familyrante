@@ -1,6 +1,6 @@
 export default function ItemCardapio(props){
     return(
-        <li>
+        <li className="item__cardapio">
             <div>
                 <h2 className="item__cardapio--nome">{props.nome}</h2>
                 <p className="item__cardapio--preco">{props.preco}</p>

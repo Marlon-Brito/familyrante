@@ -1,0 +1,92 @@
+.cabecalho{
+    @include displayFlex(center, center);
+    flex-direction: column;
+    background-color: transparent;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 110px;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 1em;
+
+    @include tablet(){
+        @include displayFlex(space-between, center);
+        flex-direction: row;
+        font-size: 1.1em;
+        height: 100px;
+    }
+
+    @include pc(){
+        flex-direction: row;
+        align-items: center;
+        // padding: 1rem 5rem;
+        font-size: 1.2em;
+    }
+}
+
+.logo{
+    width: 200px;
+    filter: invert(100%);
+    margin-top: 1rem;
+
+    @include tablet(){
+        width: 250px;
+        margin-top: 0;
+        margin-left: 2rem;
+    }
+
+    @include pc(){
+        margin-left: 4rem;
+    }
+}
+
+nav{
+    @include tablet(){
+        margin-right: 2rem;
+    }
+
+    @include pc(){
+        margin-right: 4rem;
+    }
+}
+
+.scrolled {
+    background-color: $bg-color-secondary; /* Cor de fundo ao rolar */
+}
+
+.scrolled .logo{
+    filter: invert(0%);
+}
+
+.scrolled .menu li a{
+    color: $text-color-primary;
+}
+
+.menu{
+    display: flex;
+    width: 100%;
+    padding: 0;
+
+    & > li{
+        flex-grow: 1; // O quanto um item crescerá em relação ao restante dos itens flexíveis
+
+        & > a{
+            @include displayFlex(center, center);
+            text-decoration: none;
+            padding: 0.5rem 0.3rem;
+            color: $text-color-secondary;
+
+            @include tablet(){
+                padding: 0.6rem 0.4rem;
+            }
+
+            @include pc(){
+                padding: 0.7rem 0.5rem;
+            }
+
+            &:hover{
+                color: $bg-color-tertiary;
+            }
+        }
+    }
+}
