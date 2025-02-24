@@ -1,25 +1,25 @@
-import { useEffect, useState } from 'react'
-// Importando imagens e videos
+// Importando hooks (funções que conectam recursos do react a componentes funcionais)
+import { useEffect, useState } from 'react';
+// Importando imagens
 import Sobre from '../public/assets/images/sobre.jpg';
 import Servicos from '../public/assets/images/servicos.jpg';
 
 // Importando styles e scripts
 import '../public/assets/css/index.css';
 import '../public/assets/js/cardapio.js';
+import { bebidas, pratosPrincipais, sobremesas } from '../public/assets/js/cardapio.js'; // Estrutura de dados
+
 // Importando componentes
 import Header from './components/Header.jsx';
 import ItemCardapio from './components/ItemCardapio.jsx';
 import Navegacao from './components/Navegação.jsx';
 import Carrossel from './components/Carrossel.jsx';
-// Importando estrutura de dados
-import { bebidas, pratosPrincipais, sobremesas } from '../public/assets/js/cardapio.js';
 
 function App() {
   // Definindo lista de páginas do menu
   const paginaMenu = [pratosPrincipais, sobremesas, bebidas]
   // Monitorando qual página está selecionada com state
   const [paginaSelecionada, atualizarPaginaSelecionada] = useState(0); 
-
 
   useEffect(() => {
     // Necessita instanciar e passar uma função com parâmetro

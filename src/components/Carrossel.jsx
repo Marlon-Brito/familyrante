@@ -1,4 +1,3 @@
-// import '../../public/assets/css/carrossel.css';
 import ImgPratoPrincipal from '../../public/assets/images_carrossel/prato_principal.jpg';
 import ImgSobremesa from '../../public/assets/images_carrossel/sobremesa.jpg';
 import ImgBebida from '../../public/assets/images_carrossel/bebida.jpg';

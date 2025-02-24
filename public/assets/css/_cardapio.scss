@@ -1,4 +1,4 @@
-// Navegação
+// Menu de Navegação
 .navegacao{
     @include displayFlex(center, center);
     text-align: center;
@@ -34,6 +34,7 @@
             padding: 0 10px;
         }
 
+        // Conteúdos responsivos
         @include tablet(){
             font-size: 1.2em;
             margin: 1rem;
@@ -43,10 +44,15 @@
             font-size: 1.4em;
             margin: 1.5rem;
         }
+
+        @include tv(){
+            font-size: 1.6em;
+            margin: 2rem;
+        }
     }
 }
 
-// Menu de Itens
+// Menu
 .menu__cardapio{
     @include displayFlex(center, center);
     flex-wrap: wrap;
@@ -56,6 +62,7 @@
     background-color: $bg-color-secondary;
     margin: 2rem 0;
 
+    // Itens
     & > .item__cardapio{
         @include displayFlex(space-evenly, center);
         flex-direction: column;
@@ -66,34 +73,41 @@
         border-radius: 0.5rem;
         padding: 0.5rem;
         font-weight: bold;
-
         box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.5);
 
+        // Nome do item
         & > div .item__cardapio--nome{
             font-size: 1.5em;
         }
 
+        // Imagem do item
         & > .item__cardapio--imagem{
             width: 95%;
             height: 15rem;
             border-radius: inherit;
+            transition: all 0.2s ease-in-out;
+
+            &:hover{
+                filter: contrast(120%);
+            }
         }
 
+        // Descrição do item
         & > div .item__cardapio--descricao{
             display: none;
         }
 
+        // Preço do item
         & > div .item__cardapio--preco{
             font-size: 1.3em;
             color: $bg-color-tertiary;
             text-shadow: 1px 1px 1px black;
         }
-    }
-}
 
-@media (min-width: 1200px) {
-    .menu__cardapio .item__cardapio{
-        height: 26rem;
-        width: 18rem;
+        // Conteúdos responsivos
+        @include pc(){
+            height: 26rem;
+            width: 18rem;
+        }
     }
 }

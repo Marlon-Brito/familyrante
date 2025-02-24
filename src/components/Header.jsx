@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Logo from '../../public/assets/images/logo-familyrante.png';
 
 export default function Header(){
+    // Monitorando evento de rolagem para adicionar outro estilo ao cabeçalho
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {

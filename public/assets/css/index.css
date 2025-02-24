@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/*
+    Ao invés de se usar vários media queries dá para adicionar 
+    conteúdos responsivos para cada item que se quer, para isso 
+    se usa um mixin com um media querie que conterá conteúdos.
+    Isso com tamanhos de tela para Tablet, PC e TV.
+*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan&family=Leckerli+One&family=Playwrite+AU+SA&display=swap");
 .cabecalho {
   display: flex;
@@ -25,9 +31,12 @@
 }
 @media (min-width: 1200px) {
   .cabecalho {
-    flex-direction: row;
-    align-items: center;
     font-size: 1.2em;
+  }
+}
+@media (min-width: 1600px) {
+  .cabecalho {
+    font-size: 1.3em;
   }
 }
 
@@ -45,7 +54,13 @@
 }
 @media (min-width: 1200px) {
   .logo {
+    width: 300px;
     margin-left: 4rem;
+  }
+}
+@media (min-width: 1600px) {
+  .logo {
+    margin-left: 6rem;
   }
 }
 
@@ -59,17 +74,10 @@
     margin-right: 4rem;
   }
 }
-
-.scrolled {
-  background-color: #FFE5C4; /* Cor de fundo ao rolar */
-}
-
-.scrolled .logo {
-  filter: invert(0%);
-}
-
-.scrolled .menu li a {
-  color: #000;
+@media (min-width: 1600px) {
+  nav {
+    margin-right: 6rem;
+  }
 }
 
 .menu {
@@ -98,8 +106,25 @@
     padding: 0.7rem 0.5rem;
   }
 }
+@media (min-width: 1600px) {
+  .menu > li > a {
+    padding: 0.8rem 0.6rem;
+  }
+}
 .menu > li > a:hover {
   color: #ff6347;
+}
+
+.scrolled {
+  background-color: #FFE5C4;
+}
+
+.scrolled .logo {
+  filter: invert(0%);
+}
+
+.scrolled .menu li a {
+  color: #000;
 }
 
 .navegacao {
@@ -148,6 +173,12 @@
     margin: 1.5rem;
   }
 }
+@media (min-width: 1600px) {
+  .navegacao > label {
+    font-size: 1.6em;
+    margin: 2rem;
+  }
+}
 
 .menu__cardapio {
   display: flex;
@@ -181,6 +212,10 @@
   width: 95%;
   height: 15rem;
   border-radius: inherit;
+  transition: all 0.2s ease-in-out;
+}
+.menu__cardapio > .item__cardapio > .item__cardapio--imagem:hover {
+  filter: contrast(120%);
 }
 .menu__cardapio > .item__cardapio > div .item__cardapio--descricao {
   display: none;
@@ -190,13 +225,13 @@
   color: #ff6347;
   text-shadow: 1px 1px 1px black;
 }
-
 @media (min-width: 1200px) {
-  .menu__cardapio .item__cardapio {
+  .menu__cardapio > .item__cardapio {
     height: 26rem;
     width: 18rem;
   }
 }
+
 .carrossel {
   width: 100%;
   height: 500px;
@@ -229,9 +264,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Preto com transparência */
-  border-radius: 50%; /* Deixa arredondado */
-  width: 50px; /* Ajusta o tamanho */
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 50px;
   height: 50px;
   top: 50%; /* Posiciona no centro vertical */
   transform: translateY(-50%); /* Corrige o alinhamento */
@@ -241,7 +276,7 @@
 @media (min-width: 1200px) {
   .carousel-control-prev,
   .carousel-control-next {
-    width: 100px; /* Ajusta o tamanho */
+    width: 100px; /* Ajusta o tamanho do botão*/
     height: 100px;
     margin: 0 1rem;
   }
@@ -253,10 +288,6 @@
     width: 50px; /* Largura da seta */
     height: 50px; /* Altura da seta */
   }
-}
-
-.carousel-indicators {
-  z-index: 2;
 }
 
 .carousel-item img {
@@ -282,7 +313,7 @@
   top: 50%; /* Posiciona no meio da tela */
   left: 50%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Corrige o alinhamento */
-  text-align: center; /* Garante centralização do texto */
+  text-align: center;
   width: 80%;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -303,7 +334,12 @@
 }
 @media (min-width: 1200px) {
   .carousel-caption > i {
-    font-size: 10em;
+    font-size: 9.5em;
+  }
+}
+@media (min-width: 1600px) {
+  .carousel-caption > i {
+    font-size: 10.5em;
   }
 }
 .carousel-caption > p {
@@ -318,37 +354,17 @@
 }
 @media (min-width: 1200px) {
   .carousel-caption > p {
-    font-size: 4em;
+    font-size: 3.5em;
+  }
+}
+@media (min-width: 1600px) {
+  .carousel-caption > p {
+    font-size: 4.5em;
   }
 }
 
-@media (min-width: 1200px) {
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 100px; /* Ajusta o tamanho */
-    height: 100px;
-    margin: 0 1rem;
-  }
-  /* Ajusta as setas dentro dos botões */
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    width: 50px; /* Largura da seta */
-    height: 50px; /* Altura da seta */
-  }
-}
-.rodape {
-  background-color: #FFE5C4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  text-align: center;
-  padding: 1rem;
-}
-
-.modal-carrinho {
-  padding: 1rem;
-  background-color: #FFE5C4;
+.carousel-indicators {
+  z-index: 2;
 }
 
 * {
@@ -388,6 +404,12 @@ body {
     margin: 4rem auto;
   }
 }
+@media (min-width: 1600px) {
+  .apresentacao {
+    font-size: 1.7em;
+    margin: 6rem auto;
+  }
+}
 .apresentacao > .titulo {
   color: #ff6347;
   text-shadow: 1px 1px 1px black;
@@ -412,6 +434,12 @@ body {
 @media (min-width: 1200px) {
   .subtitulo {
     font-size: 1.9em;
+    width: 80%;
+  }
+}
+@media (min-width: 1600px) {
+  .subtitulo {
+    font-size: 2.1em;
   }
 }
 
@@ -492,6 +520,11 @@ body {
     font-size: 1.2em;
   }
 }
+@media (min-width: 1600px) {
+  .sobre__conteudo > p {
+    font-size: 1.3em;
+  }
+}
 @media (min-width: 768px) {
   .sobre__conteudo {
     grid-template-areas: "subtitulo imagem" "conteudo imagem" "conteudo imagem";
@@ -513,6 +546,11 @@ body {
 @media (min-width: 1200px) {
   .servicos__conteudo > div ul {
     font-size: 1.2em;
+  }
+}
+@media (min-width: 1600px) {
+  .servicos__conteudo > div ul {
+    font-size: 1.3em;
   }
 }
 @media (min-width: 768px) {
@@ -549,8 +587,20 @@ body {
     font-size: 1.2em;
   }
 }
+@media (min-width: 1600px) {
+  .contato > ul > li {
+    padding: 2rem;
+    font-size: 1.3em;
+  }
+}
 .contato > ul > li > a {
   text-decoration: none;
+  color: #000;
+}
+.contato > ul > li > a:hover {
+  color: #ff6347;
+}
+.contato > ul > li > a > i:hover {
   color: #000;
 }
 
@@ -575,6 +625,13 @@ body {
 }
 
 .rodape {
+  background-color: #FFE5C4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  text-align: center;
+  padding: 1rem;
   font-size: 0.8em;
 }
 @media (min-width: 768px) {
@@ -585,5 +642,10 @@ body {
 @media (min-width: 1200px) {
   .rodape {
     font-size: 1em;
+  }
+}
+@media (min-width: 1600px) {
+  .rodape {
+    font-size: 1.1em;
   }
 }/*# sourceMappingURL=index.css.map */

@@ -4,8 +4,6 @@
 @import "./header";
 @import "./cardapio";
 @import "./carrossel";
-@import "./footer";
-@import "./modal-carrinho";
 
 // Fontes
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan&family=Leckerli+One&family=Playwrite+AU+SA&display=swap');
@@ -21,6 +19,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+// Estilos gerais
 body{
     background-color: $bg-color-primary;
     font-size: 1em;
@@ -36,6 +35,7 @@ body{
     margin: 2rem auto;
     font-size: 1.1em;
 
+    // Conteúdos responsivos
     @include tablet(){
         font-size: 1.3em;
         margin: 3rem auto;
@@ -44,6 +44,11 @@ body{
     @include pc(){
         font-size: 1.5em;
         margin: 4rem auto;
+    }
+
+    @include tv(){
+        font-size: 1.7em;
+        margin: 6rem auto;
     }
 
     & > .titulo{
@@ -63,21 +68,29 @@ body{
     margin: 1rem auto;
     font-size: 1.5em;
 
+    // Conteúdos responsivos
     @include tablet(){
         font-size: 1.7em;
     }
 
     @include pc(){
         font-size: 1.9em;
+        width: 80%;
+    }
+
+    @include tv(){
+        font-size: 2.1em;
     }
 }
 
+// Seção Sobre e Serviços
 .sobre, .servicos{
     background-color: $bg-color-quaternary;
     padding: 1rem;
 }
 
 .sobre{
+    // Conteúdos responsivos
     @include tablet(){
         padding: 0rem;
 
@@ -94,6 +107,7 @@ body{
 }
 
 .servicos{
+    // Conteúdos responsivos
     @include tablet(){
         padding: 0rem;
 
@@ -125,6 +139,7 @@ body{
         margin: 0 auto 1rem;
     }
 
+    // Conteúdos responsivos
     @include tablet(){
         grid-template-columns: 1fr 1fr;
         align-items: center;
@@ -142,6 +157,7 @@ body{
     & > p{
         margin: 1rem;
 
+        // Conteúdos responsivos
         @include tablet(){
             font-size: 1.1em;
         }
@@ -150,6 +166,10 @@ body{
             width: 60%;
             margin: auto;
             font-size: 1.2em;
+        }
+
+        @include tv(){
+            font-size: 1.3em;
         }
     }
 
@@ -173,6 +193,7 @@ body{
     }
 
     & > div ul{
+        // Conteúdos responsivos
         @include tablet(){
             font-size: 1.1em;
         }
@@ -180,8 +201,13 @@ body{
         @include pc(){
             font-size: 1.2em;
         }
+
+        @include tv(){
+            font-size: 1.3em;
+        }
     }
 
+    // Conteúdos responsivos
     @include tablet(){
         grid-template-areas: 
             'imagem titulo'
@@ -191,12 +217,14 @@ body{
     }
 }
 
+// Seção Contato
 .contato{
     margin-top: 2rem;
 
     & > ul{
         text-align: center;
 
+        // Conteúdos responsivos
         @include tablet(){
             @include displayFlex(center, center);
         }
@@ -204,6 +232,7 @@ body{
         & > li{
             padding: 0.5rem;
             
+            // Conteúdos responsivos
             @include tablet(){
                 padding: 1rem;
                 font-size: 1.1em;
@@ -214,14 +243,28 @@ body{
                 font-size: 1.2em;
             }
 
+            @include tv(){
+                padding: 2rem;
+                font-size: 1.3em;
+            }
+
             & > a{
                 text-decoration: none;
                 color: $text-color-primary;
+
+                &:hover{
+                    color: $bg-color-tertiary;
+                }
+
+                & > i:hover{
+                    color: $text-color-primary;
+                }
             }
         }
     }
 }
 
+// Ícones de Contato
 .icones{
     font-size: 2em;
     padding: 0.1em;
@@ -242,14 +285,27 @@ body{
     background-color: #35C06C;
 }
 
+// Rodapé
 .rodape{
+    background-color: $bg-color-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    text-align: center;
+    padding: 1rem;
     font-size: 0.8em;
 
+    // Conteúdos responsivos
     @include tablet(){
         font-size: 0.9em;
     }
 
     @include pc(){
         font-size: 1em;
+    }
+
+    @include tv(){
+        font-size: 1.1em;
     }
 }
