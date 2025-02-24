@@ -1,9 +1,16 @@
+// Funções
 @mixin displayFlex($directionX, $directionY){
     display: flex;
     justify-content: $directionX;
     align-items: $directionY;
 }
 
+/*
+    Ao invés de se usar vários media queries dá para adicionar 
+    conteúdos responsivos para cada item que se quer, para isso 
+    se usa um mixin com um media querie que conterá conteúdos.
+    Isso com tamanhos de tela para Tablet, PC e TV.
+*/
 @mixin tablet(){
     @media (min-width: 768px) {
         @content;

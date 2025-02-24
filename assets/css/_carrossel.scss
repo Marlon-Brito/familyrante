@@ -1,12 +1,10 @@
+// Carrossel Bootstrap
 .carrossel{
     width: 100%;
     height: 500px;
     position: relative;
 
-    // @media (max-width: 500px) {
-    //     margin: 0;
-    // }
-
+    // Camada escura que encobre o carrossel
     &::after{
         content: "";
         position: absolute;
@@ -18,6 +16,7 @@
         left: 0;
     }
 
+    // Conteúdos responsivos
     @include tablet(){
         height: 700px;
     }
@@ -31,22 +30,24 @@
 .carousel-control-prev,
 .carousel-control-next {
     @include displayFlex(center, center);
-    background-color: rgba(0, 0, 0, 0.5); /* Preto com transparência */
-    border-radius: 50%; /* Deixa arredondado */
-    width: 50px; /* Ajusta o tamanho */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 50px; 
     height: 50px;
     top: 50%; /* Posiciona no centro vertical */
     transform: translateY(-50%); /* Corrige o alinhamento */
     margin: 0 0.5rem;
     z-index: 2;
 
+    // Conteúdos responsivos
     @include pc(){
-        width: 100px; /* Ajusta o tamanho */
+        width: 100px; /* Ajusta o tamanho do botão*/
         height: 100px;
         margin: 0 1rem;
     }
 
     & > .carousel-control-prev-icon, .carousel-control-next-icon {
+        // Conteúdos responsivos
         @include pc(){
             width: 50px;  /* Largura da seta */
             height: 50px; /* Altura da seta */
@@ -54,14 +55,12 @@
     }
 }
 
-.carousel-indicators {
-    z-index: 2;
-}
-
+// Imagem do carrossel
 .carousel-item img{
     width: 100%;
     height: 500px;
 
+    // Conteúdos responsivos
     @include tablet(){
         height: 700px;
     }
@@ -71,6 +70,7 @@
     }
 }
 
+// Legenda do carrossel
 .carousel-caption{
     z-index: 2;
     color: $bg-color-tertiary;
@@ -79,10 +79,11 @@
     top: 50%; /* Posiciona no meio da tela */
     left: 50%; /* Centraliza horizontalmente */
     transform: translate(-50%, -50%); /* Corrige o alinhamento */
-    text-align: center; /* Garante centralização do texto */
+    text-align: center;
     width: 80%;
     user-select: none;
 
+    // Conteúdos responsivos
     @include pc(){
         text-shadow: 5px 5px 0px black;
     }
@@ -90,12 +91,17 @@
     & > i{
         font-size: 7.5em;
 
+        // Conteúdos responsivos
         @include tablet(){
             font-size: 8.5em;
         }
 
         @include pc(){
-            font-size: 10em;
+            font-size: 9.5em;
+        }
+
+        @include tv(){
+            font-size: 10.5em;
         }
     }
     
@@ -104,29 +110,22 @@
         font-family: 'Leckerli One';
         margin-top: 1rem;
 
+        // Conteúdos responsivos
         @include tablet(){
             font-size: 2.5em
         }
 
         @include pc(){
-            font-size: 4em;
+            font-size: 3.5em;
+        }
+
+        @include tv(){
+            font-size: 4.5em;
         }
     }
 }
 
-@media (min-width: 1200px) {
-
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 100px; /* Ajusta o tamanho */
-        height: 100px;
-        margin: 0 1rem;
-    }
-
-    /* Ajusta as setas dentro dos botões */
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        width: 50px;  /* Largura da seta */
-        height: 50px; /* Altura da seta */
-    }
+// Traços indicadores
+.carousel-indicators {
+    z-index: 2;
 }
