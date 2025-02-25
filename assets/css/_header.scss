@@ -27,6 +27,19 @@
     }
 }
 
+// Estilos do menu após rolar a página
+.scrolled {
+    background-color: $bg-color-secondary;
+}
+
+.scrolled .logo{
+    filter: invert(0%);
+}
+
+.scrolled .menu li a{
+    color: $text-color-primary;
+}
+
 // Logo
 .logo{
     width: 200px;
@@ -68,6 +81,7 @@ nav{
 
 .menu{
     display: flex;
+    margin: auto;
     width: 100%;
     padding: 0;
 
@@ -79,6 +93,10 @@ nav{
             text-decoration: none;
             padding: 0.5rem 0.3rem;
             color: $text-color-secondary;
+
+            &:hover{
+                color: $bg-color-tertiary;
+            }
 
             // Conteúdos responsivos
             @include tablet(){
@@ -92,23 +110,6 @@ nav{
             @include tv(){
                 padding: 0.8rem 0.6rem;
             }
-
-            &:hover{
-                color: $bg-color-tertiary;
-            }
         }
     }
-}
-
-// Estilos do menu após rolar a página
-.scrolled {
-    background-color: $bg-color-secondary;
-}
-
-.scrolled .logo{
-    filter: invert(0%);
-}
-
-.scrolled .menu li a{
-    color: $text-color-primary;
 }
