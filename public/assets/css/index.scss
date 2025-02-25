@@ -251,13 +251,11 @@ body{
             & > a{
                 text-decoration: none;
                 color: $text-color-primary;
+                display: inline-block;
 
                 &:hover{
-                    color: $bg-color-tertiary;
-                }
-
-                & > i:hover{
-                    color: $text-color-primary;
+                    transform: scale(1.2);
+                    transition: transform 0.3s ease-in-out;
                 }
             }
         }

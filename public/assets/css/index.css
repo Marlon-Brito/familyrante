@@ -40,6 +40,18 @@
   }
 }
 
+.scrolled {
+  background-color: #FFE5C4;
+}
+
+.scrolled .logo {
+  filter: invert(0%);
+}
+
+.scrolled .menu li a {
+  color: #000;
+}
+
 .logo {
   width: 200px;
   filter: invert(100%);
@@ -82,6 +94,7 @@
 
 .menu {
   display: flex;
+  margin: auto;
   width: 100%;
   padding: 0;
 }
@@ -95,6 +108,9 @@
   text-decoration: none;
   padding: 0.5rem 0.3rem;
   color: #fff;
+}
+.menu > li > a:hover {
+  color: #ff6347;
 }
 @media (min-width: 768px) {
   .menu > li > a {
@@ -110,21 +126,6 @@
   .menu > li > a {
     padding: 0.8rem 0.6rem;
   }
-}
-.menu > li > a:hover {
-  color: #ff6347;
-}
-
-.scrolled {
-  background-color: #FFE5C4;
-}
-
-.scrolled .logo {
-  filter: invert(0%);
-}
-
-.scrolled .menu li a {
-  color: #000;
 }
 
 .navegacao {
@@ -596,12 +597,11 @@ body {
 .contato > ul > li > a {
   text-decoration: none;
   color: #000;
+  display: inline-block;
 }
 .contato > ul > li > a:hover {
-  color: #ff6347;
-}
-.contato > ul > li > a > i:hover {
-  color: #000;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
 }
 
 .icones {
