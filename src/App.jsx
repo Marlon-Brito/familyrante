@@ -14,6 +14,7 @@ import Header from './components/Header.jsx';
 import ItemCardapio from './components/ItemCardapio.jsx';
 import Navegacao from './components/Navegação.jsx';
 import Carrossel from './components/Carrossel.jsx';
+import ModalCarrinho from './components/ModalCarrinho.jsx';
 
 function App() {
   // Definindo lista de páginas do menu
@@ -74,6 +75,8 @@ function App() {
               />)
             }
           </ul>
+
+          <ModalCarrinho/>
         </section>
 
         {/* Seções de Informações: Sobre, Serviços e Contato */}
