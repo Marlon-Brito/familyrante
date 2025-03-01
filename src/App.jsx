@@ -115,6 +115,29 @@ function App() {
           </div>
         </section>
 
+        <section className='reservas hidden' id="reservas">
+            <h2>Reservas</h2>
+            <form action="#">
+              <label htmlFor="nome">Nome: </label>
+              <input type="text" id="nome" />
+
+              <label htmlFor="numero">Número: </label>
+              <input type="number" id="numero" />
+
+              <label htmlFor="email">E-mail: </label>
+              <input type="email" id="email" />
+
+              <label htmlFor="numero__pessoas">Número de pessoas na mesa: </label>
+              <input type="number" id="numero__pessoas" />
+
+              <label htmlFor="data">Data: </label>
+              <input type="date" id="data" />
+
+              <label htmlFor="horario">Horário: </label>
+              <input type="time" id="horario" />
+            </form>
+        </section>
+
         <section className='contato hidden' id='contato'>
           <h2 className='subtitulo'>Contato</h2>
 
