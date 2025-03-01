@@ -116,25 +116,39 @@ function App() {
         </section>
 
         <section className='reservas hidden' id="reservas">
-            <h2>Reservas</h2>
-            <form action="#">
-              <label htmlFor="nome">Nome: </label>
-              <input type="text" id="nome" />
+            <h2 className='subtitulo'>Reservas</h2>
+            <form action="#" className='formulario__reservas'>
+              <div className='campos'>
+                <label htmlFor="nome">Nome: </label>
+                <input type="text" id="nome" />
+              </div>
 
-              <label htmlFor="numero">Número: </label>
-              <input type="number" id="numero" />
+              <div className='campos'>
+                <label htmlFor="numero">Número: </label>
+                <input type="number" id="numero" />
+              </div>
 
-              <label htmlFor="email">E-mail: </label>
-              <input type="email" id="email" />
+              <div className='campos'>
+                <label htmlFor="email">E-mail: </label>
+                <input type="email" id="email" />
+              </div>
 
-              <label htmlFor="numero__pessoas">Número de pessoas na mesa: </label>
-              <input type="number" id="numero__pessoas" />
+              <div className='campos'>
+                <label htmlFor="numero__pessoas">Número de pessoas na mesa: </label>
+                <input type="number" id="numero__pessoas" />
+              </div>
 
-              <label htmlFor="data">Data: </label>
-              <input type="date" id="data" />
+              <div className='campos'>
+                <label htmlFor="data">Data: </label>
+                <input type="date" id="data" />
+              </div>
 
-              <label htmlFor="horario">Horário: </label>
-              <input type="time" id="horario" />
+              <div className='campos'>
+                <label htmlFor="horario">Horário: </label>
+                <input type="time" id="horario" />
+              </div>
+
+              <input type="submit" value="Reservar" id='btn__reservar' />
             </form>
         </section>
 

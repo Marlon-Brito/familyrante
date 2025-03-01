@@ -560,6 +560,30 @@ body {
   }
 }
 
+.reservas {
+  background-color: #fff6e9;
+  padding: 1rem;
+}
+.reservas > .subtitulo {
+  position: relative;
+}
+.reservas > .formulario__reservas {
+  display: flex;
+  flex-direction: column;
+}
+.reservas > .formulario__reservas > .campos {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+.reservas #btn__reservar {
+  background-color: #35C06C;
+  border: 0;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
 .contato {
   margin-top: 2rem;
 }

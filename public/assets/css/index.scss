@@ -217,6 +217,37 @@ body{
     }
 }
 
+// Seção Reservas
+.reservas{
+    background-color: $bg-color-primary;
+    padding: 1rem;
+
+    & > .subtitulo{
+        position: relative;
+    }
+
+    & > .formulario__reservas{
+        display: flex;
+        flex-direction: column;
+
+        & > .campos{
+            display: flex;
+            flex-direction: column;
+            margin: 0.5rem 0;
+            
+
+        }
+    }
+
+    #btn__reservar{
+        background-color: #35C06C;
+        border: 0;
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+        position: relative;
+    }
+}
+
 // Seção Contato
 .contato{
     margin-top: 2rem;
