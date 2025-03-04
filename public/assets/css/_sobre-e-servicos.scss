@@ -1,0 +1,133 @@
+// Seções Sobre e Serviços
+.sobre, .servicos{
+    background-color: $bg-color-quaternary;
+    padding: 1rem;
+}
+
+.sobre{
+    // Conteúdos responsivos
+    @include tablet(){
+        padding: 0rem;
+
+        & > .sobre__conteudo .subtitulo{
+            grid-area: subtitulo;
+        }
+        & > .sobre__conteudo p{
+            grid-area: conteudo;
+        }
+        & > .sobre__conteudo img{
+            grid-area: imagem;
+        }
+    }
+}
+
+.servicos{
+    // Conteúdos responsivos
+    @include tablet(){
+        padding: 0rem;
+
+        & > .servicos__conteudo div .subtitulo{
+            grid-area: titulo;
+            margin-top: 2rem;
+        }
+        & > .servicos__conteudo div h3{
+            grid-area: subtitulos;
+        }
+        & > .servicos__conteudo div ul{
+            grid-area: conteudos;
+        }
+        & > .servicos__conteudo img{
+            grid-area: imagem;
+        }
+    }
+}
+
+.sobre__conteudo, .servicos__conteudo{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+    text-align: center;
+    color: $text-color-secondary;
+
+    & > img{
+        width: 100%;
+        margin: 0 auto 1rem;
+    }
+
+    // Conteúdos responsivos
+    @include tablet(){
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    
+        & > img{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+    }
+}
+
+.sobre__conteudo{
+    
+    & > p{
+        margin: 1rem;
+
+        // Conteúdos responsivos
+        @include tablet(){
+            font-size: 1.1em;
+        }
+
+        @include pc(){
+            width: 60%;
+            margin: auto;
+            font-size: 1.2em;
+        }
+
+        @include tv(){
+            font-size: 1.3em;
+        }
+    }
+
+    @include tablet(){
+        grid-template-areas: 
+            'subtitulo imagem'
+            'conteudo imagem'
+            'conteudo imagem'
+        ;
+    }
+}
+
+.servicos__conteudo{
+    & > img{
+        margin: 1rem 0;
+    } 
+
+    & > div h3{
+        color: $bg-color-tertiary;
+        margin-top: 1rem;
+    }
+
+    & > div ul{
+        // Conteúdos responsivos
+        @include tablet(){
+            font-size: 1.1em;
+        }
+
+        @include pc(){
+            font-size: 1.2em;
+        }
+
+        @include tv(){
+            font-size: 1.3em;
+        }
+    }
+
+    // Conteúdos responsivos
+    @include tablet(){
+        grid-template-areas: 
+            'imagem titulo'
+            'imagem subtitulos'
+            'imagem conteudos'
+        ;
+    }
+}
