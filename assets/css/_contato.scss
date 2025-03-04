@@ -1,0 +1,65 @@
+// Seção Contato
+.contato{
+    margin-top: 2rem;
+
+    & > ul{
+        text-align: center;
+
+        // Conteúdos responsivos
+        @include tablet(){
+            @include displayFlex(center, center);
+        }
+
+        & > li{
+            padding: 0.5rem;
+            
+            // Conteúdos responsivos
+            @include tablet(){
+                padding: 1rem;
+                font-size: 1.1em;
+            }
+
+            @include pc(){
+                padding: 1.5rem;
+                font-size: 1.2em;
+            }
+
+            @include tv(){
+                padding: 2rem;
+                font-size: 1.3em;
+            }
+
+            & > a{
+                text-decoration: none;
+                color: $text-color-primary;
+                display: inline-block;
+
+                &:hover{
+                    transform: scale(1.2);
+                    transition: transform 0.5s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+// Ícones de Contato
+.icones{
+    font-size: 2em;
+    padding: 0.1em;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+#insta{
+    background-image: linear-gradient(to top, #F59705, #F7552F, #DD0EA8, #213AD8);
+}
+
+#face{
+    background-color: #106BFF;
+}
+
+#whats{
+    background-color: #35C06C;
+}
