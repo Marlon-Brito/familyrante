@@ -21,29 +21,6 @@ function App() {
   // Monitorando qual página está selecionada com state
   const [paginaSelecionada, atualizarPaginaSelecionada] = useState(0); 
 
-  useEffect(() => {
-    // Necessita instanciar e passar uma função com parâmetro
-    const observer = new IntersectionObserver((entries, observerInstance) => {
-      // Agora se receberá todas entradas, então deve-se separar estas listas de dados
-      entries.forEach((entry) => {
-        // Verá cada entrada, se ela estiver na tela se aplicará a classe 
-        if (entry.isIntersecting) {
-          // Adicionar a classe "show" para torná-la visível
-          entry.target.classList.add('show');
-          // Parar de observar essa seção
-          observerInstance.unobserve(entry.target);
-        }
-      });
-    });
-
-    // Selecionar todas as seções com a classe "hidden"
-    const hiddenElements = document.querySelectorAll('.hidden');
-    hiddenElements.forEach((element) => observer.observe(element));
-
-    // Cleanup (limpeza) para evitar memory leaks (vazamentos de memória)
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <>
       {/* Cabeçalho */}
@@ -58,7 +35,7 @@ function App() {
           <p className='slogan'>O melhor restaurante, onde você come em família.</p>
         </div>
         
-        <section className='cardapio hidden' id='cardapio'>
+        <section className='cardapio' id='cardapio'>
           {/* Cardápio: menu de navegação e itens do cardápio */}
           <h2 className='subtitulo'>Cardápio</h2>
 
@@ -76,8 +53,8 @@ function App() {
           </ul>
         </section>
 
-        {/* Seções de Informações: Sobre, Serviços e Contato */}
-        <section className='sobre hidden' id='sobre'>
+        {/* Seção Sobre */}
+        <section className='sobre' id='sobre'>
           <div className='sobre__conteudo'>
             <h2 className='subtitulo'>Sobre</h2>
             <p>Família, restaurante e comida. Venha conhecer o Familyrante, o restaurante que busca trazer aquele gostinho caseiro e aconchegante de poder apreciar uma comida junto da família, bem feita e de qualidade para saciar a fome.</p>
@@ -86,7 +63,8 @@ function App() {
           </div>
         </section>
 
-        <section className='servicos hidden' id='servicos'>
+        {/* Seção Serviços */}
+        <section className='servicos' id='servicos'>
           <div className='servicos__conteudo'>
             <div>
               <h2 className='subtitulo'>Serviços</h2>
@@ -115,43 +93,50 @@ function App() {
           </div>
         </section>
 
-        <section className='reservas hidden' id="reservas">
+        {/* Seção Reservas */}
+        <section className='reservas' id="reservas">
             <h2 className='subtitulo'>Reservas</h2>
-            <form action="#" className='formulario__reservas'>
-              <div className='campos'>
-                <label htmlFor="nome">Nome: </label>
-                <input type="text" id="nome" />
-              </div>
 
-              <div className='campos'>
-                <label htmlFor="numero">Número: </label>
-                <input type="number" id="numero" />
-              </div>
+            <div>
+              <p><span>O que está esperando?</span> Faça sua reserva agora mesmo e venha degustar comida de qualidade feita com carinho para você e sua família!</p>
 
-              <div className='campos'>
-                <label htmlFor="email">E-mail: </label>
-                <input type="email" id="email" />
-              </div>
+              <form action="#" className='formulario__reservas'>
+                <div className='campos nome'>
+                  <label htmlFor="nome">Nome: </label>
+                  <input type="text" id="nome" />
+                </div>
 
-              <div className='campos'>
-                <label htmlFor="numero__pessoas">Número de pessoas na mesa: </label>
-                <input type="number" id="numero__pessoas" />
-              </div>
+                <div className='campos numero--contato'>
+                  <label htmlFor="numero">Número: </label>
+                  <input type="number" id="numero" />
+                </div>
 
-              <div className='campos'>
-                <label htmlFor="data">Data: </label>
-                <input type="date" id="data" />
-              </div>
+                <div className='campos email'>
+                  <label htmlFor="email">E-mail: </label>
+                  <input type="email" id="email" />
+                </div>
 
-              <div className='campos'>
-                <label htmlFor="horario">Horário: </label>
-                <input type="time" id="horario" />
-              </div>
+                <div className='campos numero--pessoas'>
+                  <label htmlFor="numero__pessoas">Número de pessoas na mesa: </label>
+                  <input type="number" id="numero__pessoas" />
+                </div>
 
-              <input type="submit" value="Reservar" id='btn__reservar' />
-            </form>
+                <div className='campos data'>
+                  <label htmlFor="data">Data: </label>
+                  <input type="date" id="data" />
+                </div>
+
+                <div className='campos horario'>
+                  <label htmlFor="horario">Horário: </label>
+                  <input type="time" id="horario" />
+                </div>
+
+                <input type="submit" value="Reservar" id='btn__reservar' />
+              </form>
+            </div>
         </section>
 
+        {/* Seção Contato */}
         <section className='contato hidden' id='contato'>
           <h2 className='subtitulo'>Contato</h2>
 
@@ -171,4 +156,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
