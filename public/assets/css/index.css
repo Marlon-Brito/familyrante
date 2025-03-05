@@ -549,28 +549,15 @@
   }
 }
 .reservas > div > .formulario__reservas {
-  display: flex;
-  flex-direction: column;
   background-color: #1b1e23;
   color: #fff;
   padding: 1rem;
   width: 100%;
   max-width: 400px;
   margin: auto;
+  display: grid;
   gap: 0 1rem;
-}
-.reservas > div > .formulario__reservas > .campos {
-  display: flex;
-  flex-direction: column;
-  margin: 0.5rem 0;
-}
-.reservas > div > .formulario__reservas > .campos > input {
-  padding: 0.2em;
-}
-.reservas > div > .formulario__reservas > .campos > input:focus {
-  border: 2px solid #ff6347;
-  outline: 0;
-  transition: all 1s;
+  grid-template-areas: "nome nome" "numero--contato numero--contato" "email email" "numero--pessoas numero--pessoas" "data horario" "btn__reservar btn__reservar";
 }
 .reservas > div > .formulario__reservas > .nome {
   grid-area: nome;
@@ -593,12 +580,23 @@
 .reservas > div > .formulario__reservas > #btn__reservar {
   grid-area: btn__reservar;
 }
+.reservas > div > .formulario__reservas > .campos {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+.reservas > div > .formulario__reservas > .campos > input {
+  padding: 0.2em;
+}
+.reservas > div > .formulario__reservas > .campos > input:focus {
+  border: 2px solid #ff6347;
+  outline: 0;
+  transition: all 1s;
+}
 @media (min-width: 768px) {
   .reservas > div > .formulario__reservas {
     font-size: 1.1em;
     margin-top: 1rem;
-    display: grid;
-    grid-template-areas: "nome nome" "numero--contato numero--contato" "email email" "numero--pessoas numero--pessoas" "data horario" "btn__reservar btn__reservar";
   }
 }
 @media (min-width: 1200px) {
