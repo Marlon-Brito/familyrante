@@ -59,15 +59,31 @@
         }
 
         & > .formulario__reservas{
-            display: flex;
-            flex-direction: column;
             background-color: $bg-color-quaternary;
             color: $text-color-secondary;
             padding: 1rem;
             width: 100%;
             max-width: 400px;
             margin: auto;
+            display: grid;
             gap: 0 1rem;
+
+            & > .nome{ grid-area: nome; }
+            & > .numero--contato{ grid-area: numero--contato; }
+            & > .email{ grid-area: email; }
+            & > .numero--pessoas{ grid-area: numero--pessoas; }
+            & > .data{ grid-area: data; }
+            & > .horario{ grid-area: horario; }
+            & > #btn__reservar{ grid-area: btn__reservar; }
+            
+            grid-template-areas: 
+                'nome nome'
+                'numero--contato numero--contato'
+                'email email'
+                'numero--pessoas numero--pessoas'
+                'data horario'
+                'btn__reservar btn__reservar'
+            ;
     
             & > .campos{
                 display: flex;
@@ -85,27 +101,10 @@
                 }
             }
 
-            & > .nome{ grid-area: nome; }
-            & > .numero--contato{ grid-area: numero--contato; }
-            & > .email{ grid-area: email; }
-            & > .numero--pessoas{ grid-area: numero--pessoas; }
-            & > .data{ grid-area: data; }
-            & > .horario{ grid-area: horario; }
-            & > #btn__reservar{ grid-area: btn__reservar; }
-
             // Conteúdos responsivos
             @include tablet(){
                 font-size: 1.1em;
                 margin-top: 1rem;
-                display: grid;
-                grid-template-areas: 
-                'nome nome'
-                'numero--contato numero--contato'
-                'email email'
-                'numero--pessoas numero--pessoas'
-                'data horario'
-                'btn__reservar btn__reservar'
-            ;
             }
 
             // Conteúdos responsivos
